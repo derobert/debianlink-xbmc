@@ -120,6 +120,7 @@ binary-common:
 #	dh_strip -X.so -X.a --dbg-package=xbmc-common-dbg
 	dh_fixperms
 	dh_installdeb
+	dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb

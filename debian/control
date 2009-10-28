@@ -31,7 +31,8 @@ Description: The Full XBMC meta package
  
 Package: xbmc-common
 Architecture: i386 amd64
-Depends: pmount, libdbus-1-3, libhal1, libhal-storage1, libsdl1.2debian, libsdl-gfx1.2-4, libsdl-image1.2, 
+Depends: ${shlibs:Depends} ${misc:Depends}
+Suggests: pmount, libdbus-1-3, libhal1, libhal-storage1, libsdl1.2debian, libsdl-gfx1.2-4, libsdl-image1.2, 
   libsdl-mixer1.2, libsdl-sound1.2, libfribidi0, libcdio7, liblzo1, liblzo2-2, libfreetype6, libbz2-1.0,
   libsqlite3-0, python2.4, python-sqlite, libglew1.5, gawk, libsmbclient, libasound2, libmms0, libcurl3, 
   libxinerama1, x11-common, xserver-xorg-core, libxrandr2, libxrender1, libmad0, libtre4, libvorbis0a, 
@@ -103,13 +104,13 @@ Description: XBMC Webserver Iphone skin package
 
 Package: xbmc-eventclients-wiiremote
 Architecture: i386 amd64
-Depends: xbmc-eventclients-common (= ${binary:Version}), libcwiid1
+Depends: xbmc-eventclients-common (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: XBMC Event Client for WII Remote support
  The Wii Remote client package for XBMC.
 
 Package: xbmc-eventclients-common
 Architecture: i386 amd64
-Depends: libbluetooth3
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: XBMC Event Client Common package
  The common package for XBMC Event Client.
 
