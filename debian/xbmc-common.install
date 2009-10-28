@@ -8,6 +8,6 @@ opt/xbmc/share/xbmc/screensavers
 opt/xbmc/share/xbmc/system
 opt/xbmc/share/xbmc/xbmc.bin
 opt/xbmc/share/xbmc/xbmc-xrandr
-opt/xbmc/share/pixmaps/xbmc.png
-opt/xbmc/share/applications
+usr/share/pixmaps/xbmc.png
+usr/share/applications
 opt/xbmc/share/xbmc/FEH.py

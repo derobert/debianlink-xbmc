@@ -1,10 +1,16 @@
-xbmc (9.04~alpha1svn19325-neuros6) intrepid; urgency=low
+xbmc (9.04~alpha1svn19325-neuros6) hydrogen; urgency=low
 
   * Stealing package.
   * Move to /opt
-  * Fixe Build-Depends for Debian.
+  * Fix Build-Depends for Debian.
+  * Fix problem where debian/rules when invoked through dpkg-buildpackage
+  	thought that building the package twice was a grand idea. Especially since
+  	configure through fakeroot breaks badly. Halves build time, too! Is this
+  	just me, or did no one actually build this package before...? Or at least
+  	not the "normal" way.
+  * change to hydrogen, not intrepid, of course. I always forget this.
 
- -- Anthony DeRobertis <anthony@derobert.net>  Tue, 27 Oct 2009 22:48:08 -0400
+ -- Anthony DeRobertis <anthony@derobert.net>  Wed, 28 Oct 2009 14:10:30 -0400
 
 xbmc (9.04~alpha1svn19325-neuros5) intrepid; urgency=low
 

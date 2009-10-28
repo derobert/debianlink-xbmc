@@ -25,7 +25,7 @@ ifneq "$(shell cat debian/svnrevision)" ""
 SVNVERSION ?= $(shell cat debian/svnrevision)
 endif
 
-config.status: patch configure
+config.status: patch-stamp configure
 	dh_testdir
 	# Add here commands to configure the package.
 ifneq "$(wildcard /usr/share/misc/config.sub)" ""
@@ -41,14 +41,12 @@ build: build-arch
 
 build-arch: build-arch-stamp
 build-arch-stamp:  config.status
-
 	# Add here commands to compile the arch part of the package.
 	$(MAKE) -j3
 	touch $@
 
 build-indep: build-indep-stamp
 build-indep-stamp:  config.status
-
 	# Add here commands to compile the indep part of the package.
 	#$(MAKE) doc
 	touch $@
@@ -56,8 +54,10 @@ build-indep-stamp:  config.status
 clean: clean-patched unpatch
 clean-patched:
 	dh_testdir
-	dh_testroot
 	rm -f build-arch-stamp build-indep-stamp 
+	find -name 'config.cache' -print0 | xargs -0r rm
+	find -name 'config.status' -print0 | xargs -0r rm
+	find -name 'config.log' -print0 | xargs -0r rm
 
 	# Add here commands to clean up after the build process.
 	#$(MAKE) distclean
@@ -86,8 +86,8 @@ install-arch:
 
 	# Add here commands to install the arch part of the package into 
 	# debian/tmp/usr/share/xbmc
-	make install prefix=$(CURDIR)/debian/tmp/usr/
-	make eventclients prefix=$(CURDIR)/debian/tmp/usr/ installdir=/usr WII_EXTRA_OPTS=-DCWIID_OLD
+	make install prefix=$(CURDIR)/debian/tmp/opt/xbmc
+	make eventclients prefix=$(CURDIR)/debian/tmp/opt/xbmc/ installdir=/opt/xbmc WII_EXTRA_OPTS=-DCWIID_OLD
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/applications $(CURDIR)/debian/tmp/usr/share/pixmaps
 	cp -a $(CURDIR)/tools/Linux/xbmc.png $(CURDIR)/debian/tmp/usr/share/pixmaps/
 	cp -a $(CURDIR)/tools/Linux/xbmc.desktop $(CURDIR)/debian/tmp/usr/share/applications/
@@ -95,16 +95,16 @@ install-arch:
 	dh_install -s --sourcedir=$(CURDIR)/debian/tmp
 	
 	# XBMC WEB EFLEXWEB
-	mkdir -p $(CURDIR)/debian/xbmc-web-eflexweb/usr/share/xbmc/web
-	unzip -oq $(CURDIR)/web/WebInterfaceXBMC-0.17.zip -d $(CURDIR)/debian/xbmc-web-eflexweb/usr/share/xbmc/web
+	mkdir -p $(CURDIR)/debian/xbmc-web-eflexweb/opt/xbmc/share/xbmc/web
+	unzip -oq $(CURDIR)/web/WebInterfaceXBMC-0.17.zip -d $(CURDIR)/debian/xbmc-web-eflexweb/opt/xbmc/share/xbmc/web
 	# XBMC WEB PM
-	mkdir -p $(CURDIR)/debian/xbmc-web-pm/usr/share/xbmc/web
-	unzip -oq $(CURDIR)/web/Project_Mayhem_webserver_V1.1.2.zip -d $(CURDIR)/debian/xbmc-web-pm/usr/share/xbmc/web
+	mkdir -p $(CURDIR)/debian/xbmc-web-pm/opt/xbmc/share/xbmc/web
+	unzip -oq $(CURDIR)/web/Project_Mayhem_webserver_V1.1.2.zip -d $(CURDIR)/debian/xbmc-web-pm/opt/xbmc/share/xbmc/web
 	# XBMC WEB Iphone
-	mkdir -p $(CURDIR)/debian/xbmc-web-iphone-tlrobinson/usr/share/xbmc/web/iphone
-	unzip -oq $(CURDIR)/web/xbmciphone-0.1.zip -d $(CURDIR)/debian/xbmc-web-iphone-tlrobinson/usr/share/xbmc/web
-	mkdir -p $(CURDIR)/debian/xbmc-web-iphone-tlrobinson/usr/share/doc/xbmc-web-iphone-tlrobinson/ 
-	mv $(CURDIR)/debian/xbmc-web-iphone-tlrobinson/usr/share/xbmc/web/README $(CURDIR)/debian/xbmc-web-iphone-tlrobinson/usr/share/doc/xbmc-web-iphone-tlrobinson/
+	mkdir -p $(CURDIR)/debian/xbmc-web-iphone-tlrobinson/opt/xbmc/share/xbmc/web/iphone
+	unzip -oq $(CURDIR)/web/xbmciphone-0.1.zip -d $(CURDIR)/debian/xbmc-web-iphone-tlrobinson/opt/xbmc/share/xbmc/web
+	mkdir -p $(CURDIR)/debian/xbmc-web-iphone-tlrobinson/opt/xbmc/share/doc/xbmc-web-iphone-tlrobinson/ 
+	mv $(CURDIR)/debian/xbmc-web-iphone-tlrobinson/opt/xbmc/share/xbmc/web/README $(CURDIR)/debian/xbmc-web-iphone-tlrobinson/opt/xbmc/share/doc/xbmc-web-iphone-tlrobinson/
 	
 # Must not depend on anything. This is to be called by
 # binary-arch/binary-indep
