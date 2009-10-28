@@ -1,3 +1,9 @@
+xbmc (9.04~alpha1svn19325-neuros9) hydrogen; urgency=low
+
+  * Have -common check the disk size, too. Its the big one.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Wed, 28 Oct 2009 19:41:22 -0400
+
 xbmc (9.04~alpha1svn19325-neuros8) hydrogen; urgency=low
 
   * This is finally correct, I hope.

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ -e /usr/lib/neuros-link/rootfs-size-fix ]; then
+	/usr/lib/neuros-link/rootfs-size-fix || exit 1
+fi
