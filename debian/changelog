@@ -1,3 +1,9 @@
+xbmc (9.04~alpha1svn19325-neuros8) hydrogen; urgency=low
+
+  * This is finally correct, I hope.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Wed, 28 Oct 2009 18:56:24 -0400
+
 xbmc (9.04~alpha1svn19325-neuros7) hydrogen; urgency=low
 
   * use shlibs:Depends and misc:Depends... note this isn't completely ready

@@ -31,35 +31,26 @@ Description: The Full XBMC meta package
  
 Package: xbmc-common
 Architecture: i386 amd64
-Depends: ${shlibs:Depends} ${misc:Depends}
-Suggests: pmount, libdbus-1-3, libhal1, libhal-storage1, libsdl1.2debian, libsdl-gfx1.2-4, libsdl-image1.2, 
-  libsdl-mixer1.2, libsdl-sound1.2, libfribidi0, libcdio7, liblzo1, liblzo2-2, libfreetype6, libbz2-1.0,
-  libsqlite3-0, python2.4, python-sqlite, libglew1.5, gawk, libsmbclient, libasound2, libmms0, libcurl3, 
-  libxinerama1, x11-common, xserver-xorg-core, libxrandr2, libxrender1, libmad0, libtre4, libvorbis0a, 
-  libpcre3, libjasper1, libfontconfig1, hal, libenca0, libfaac0, libpulse0,
-  libmysqlclient15off,
-  libcurl4-openssl-dev,
-  mesa-utils,
-  libavahi-client3
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, python-sqlite
 Suggests: xbmc-test-helper, python-qt3
 Description: XBMC common package
  This package contains all the datas needed to have a working XBMC
 
 Package: xbmc-common-dbg
 Architecture: i386 amd64
-Depends: xbmc-common (= ${binary:Version})
+Depends: xbmc-common (= ${binary:Version}), ${misc:Depends}
 Description: XBMC Debug symbols
  This package contains debugging symbols for xbmc
 
 Package: xbmc-scripts-example
 Architecture: i386 amd64
-Depends: xbmc-common (= ${binary:Version})
+Depends: xbmc-common (= ${binary:Version}), ${misc:Depends}
 Description: XBMC default scripts package
  Scripts shipped with XBMC for user conveniance
 
 Package: xbmc-skin-pm3
 Architecture: i386 amd64
-Depends: xbmc-common (= ${binary:Version})
+Depends: xbmc-common (= ${binary:Version}), ${misc:Depends}
 Replaces: xbmc-skin-default
 Conflicts: xbmc-skin-default
 Description: XBMC Project Mahem III skin package
@@ -67,33 +58,33 @@ Description: XBMC Project Mahem III skin package
 
 Package: xbmc-skin-pm3-hd
 Architecture: i386 amd64
-Depends: xbmc-common (= ${binary:Version})
+Depends: xbmc-common (= ${binary:Version}), ${misc:Depends}
 Description: XBMC PM3 HD skin package
  The XBMC PM3 HD Skin package (aka Project Mahem III High Definition).
 
 Package: xbmc-web-pm3
 Architecture: i386 amd64
-Depends: xbmc-common (= ${binary:Version})
+Depends: xbmc-common (= ${binary:Version}), ${misc:Depends}
 Description: XBMC Webserver Project Mahem III skin package
  The PM3 (aka Project Mahem III) Skin for the XBMC web server .
 
 Package: xbmc-web-pm
 Architecture: i386 amd64
-Depends: xbmc-common (= ${binary:Version})
+Depends: xbmc-common (= ${binary:Version}), ${misc:Depends}
 Conflicts: xbmc-web-pm3
 Description: XBMC Webserver Project Mahem skin package
  The PM (aka Project Mahem) Skin for the XBMC web server .
 
 Package: xbmc-web-eflexweb
 Architecture: i386 amd64
-Depends: xbmc-common (= ${binary:Version})
+Depends: xbmc-common (= ${binary:Version}), ${misc:Depends}
 Conflicts: xbmc-web-pm3, xbmc-web-pm, xbmc-web-iphone-tlrobinson
 Description: XBMC Webserver Eflex web skin package
  The XBMC Webserver Eflex web Skin for the XBMC web server .
 
 Package: xbmc-web-iphone-tlrobinson
 Architecture: i386 amd64
-Depends: xbmc-common (= ${binary:Version})
+Depends: xbmc-common (= ${binary:Version}), ${misc:Depends}
 Description: XBMC Webserver Iphone skin package
  iPhone's web browser (based on WebKit) can display full interactive webpages, 
  and Xbox Media Center (XBMC) contains a simple web server that can store web 
@@ -116,19 +107,19 @@ Description: XBMC Event Client Common package
 
 Package: xbmc-eventclients-dev
 Architecture: i386 amd64
-Depends: xbmc-eventclients-common (= ${binary:Version})
+Depends: xbmc-eventclients-common (= ${binary:Version}), ${misc:Depends}
 Description: XBMC Event Client Dev package
  The Development package for XBMC Event Client.
 
 Package: xbmc-eventclients-j2me
 Architecture: i386 amd64
-Depends: xbmc-eventclients-common (= ${binary:Version}), python-bluez
+Depends: xbmc-eventclients-common (= ${binary:Version}), python-bluez, ${misc:Depends}
 Description: XBMC Event Client J2ME package
  The J2ME package for XBMC Event Client. This is meant to provide a server that communicate with a mobile tool supporting Java ME.
 
 Package: xbmc-eventclients-ps3
 Architecture: i386 amd64
-Depends: xbmc-eventclients-common (= ${binary:Version})
+Depends: xbmc-eventclients-common (= ${binary:Version}), ${misc:Depends}
 Description: XBMC Event Client PS3 package
  The PS3 package for XBMC Event Client.
 
