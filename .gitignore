@@ -22,7 +22,6 @@ libtool
 
 *-stamp
 stamp-*
-debian/xbmc*
 debian/files
 debian/tmp
 

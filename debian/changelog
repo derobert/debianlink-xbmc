@@ -1,3 +1,11 @@
+xbmc (9.04~alpha1svn19325-neuros6) intrepid; urgency=low
+
+  * Stealing package.
+  * Move to /opt
+  * Fixe Build-Depends for Debian.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Tue, 27 Oct 2009 22:48:08 -0400
+
 xbmc (9.04~alpha1svn19325-neuros5) intrepid; urgency=low
 
   * Allow launching apps without blocking xbmc
