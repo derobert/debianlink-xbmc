@@ -31,7 +31,7 @@ Description: The Full XBMC meta package
  
 Package: xbmc-common
 Architecture: i386 amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, python-sqlite
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${python:Depends}, python-sqlite, mesa-utils
 Suggests: xbmc-test-helper, python-qt3
 Description: XBMC common package
  This package contains all the datas needed to have a working XBMC

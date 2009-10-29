@@ -11,6 +11,7 @@
 *.l[oa]
 *.py[co]
 *.bak
+*.swp
 .deps/
 .libs/
 
@@ -22,8 +23,25 @@ libtool
 
 *-stamp
 stamp-*
+debian/*.log
+debian/*.substvars
 debian/files
 debian/tmp
+debian/xbmc
+debian/xbmc-web-pm
+debian/xbmc-web-pm3
+debian/xbmc-web-iphone-tlrobinson
+debian/xbmc-web-eflexweb
+debian/xbmc-skin-pm3
+debian/xbmc-skin-pm3-hd
+debian/xbmc-scripts-example
+debian/xbmc-eventclients-wiiremote
+debian/xbmc-eventclients-ps3
+debian/xbmc-eventclients-j2me
+debian/xbmc-eventclients-dev
+debian/xbmc-eventclients-common
+debian/xbmc-common
+debian/xbmc-common-dbg
 
 # Generated files
 
